@@ -1,0 +1,161 @@
+name: 🎨 UI/Visual Enhancement
+description: Request changes to the appearance, layout, or visual design of the system
+title: "[UI] "
+labels: ["enhancement", "ui/ux", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request visual improvements, styling changes, or user interface enhancements. Please provide specific details to help our Copilot coding assistant implement your design vision.
+
+  - type: input
+    id: ui_title
+    attributes:
+      label: UI Enhancement Title
+      description: A clear title for the visual change you want
+      placeholder: "e.g., Update school colors to match branding, Add dark mode theme, Improve mobile layout"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ui_category
+    attributes:
+      label: Type of Visual Change
+      description: What kind of visual enhancement is this?
+      options:
+        - Color scheme/Branding
+        - Layout/Positioning
+        - Typography/Fonts
+        - Icons/Images
+        - Animations/Transitions
+        - Mobile/Responsive Design
+        - Theme (Dark/Light Mode)
+        - Accessibility Improvements
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_appearance
+    attributes:
+      label: Current Appearance
+      description: Describe how it looks now
+      placeholder: "e.g., The site currently uses blue colors, but our school colors are white and lime green"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_appearance
+    attributes:
+      label: Desired Appearance
+      description: Describe how you want it to look
+      placeholder: "e.g., Change primary colors to lime green (#32CD32) and white (#FFFFFF), update header background"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected_pages
+    attributes:
+      label: Which Pages/Sections Should Change?
+      description: Where should these visual changes appear?
+      options:
+        - Entire site/All pages
+        - Home page only
+        - Activity listings
+        - Login/Registration forms
+        - Header/Navigation
+        - Footer
+        - Mobile version only
+        - Specific components
+    validations:
+      required: true
+
+  - type: textarea
+    id: design_specifications
+    attributes:
+      label: Design Specifications
+      description: Provide specific design details like colors, sizes, fonts, spacing
+      placeholder: |
+        Please include specific details such as:
+        - Exact color codes (hex/RGB)
+        - Font names and sizes
+        - Spacing measurements
+        - Specific images or icons to use
+        - Links to design examples
+      value: |
+        Colors: 
+        Fonts: 
+        Spacing: 
+        Images/Icons: 
+        References: 
+
+  - type: checkboxes
+    id: design_requirements
+    attributes:
+      label: Design Requirements
+      description: Select all that apply to your design
+      options:
+        - label: Must maintain accessibility (readable text contrast)
+        - label: Should work on mobile devices
+        - label: Should work on all modern browsers
+        - label: Must preserve existing functionality
+        - label: Should match school branding guidelines
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List specific visual requirements that must be met
+      placeholder: |
+        Specific criteria such as:
+        - Header background color is lime green (#32CD32)
+        - All buttons use white text on lime green background
+        - School mascot appears in the top left corner
+        - Changes are visible on both desktop and mobile
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples_inspiration
+    attributes:
+      label: Examples or Inspiration
+      description: Links to websites, images, or examples of the design you want
+      placeholder: "Provide URLs, upload images, or describe similar designs you've seen"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this visual change?
+      options:
+        - Low - Minor aesthetic improvement
+        - Medium - Enhances user experience
+        - High - Important for school branding
+        - Critical - Required for school compliance/standards
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical Notes
+      description: Any technical considerations or constraints
+      placeholder: "e.g., Must work with existing CSS framework, Should not affect page load speed, Consider users with slower internet"
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm you have provided sufficient design detail
+      options:
+        - label: I have provided specific design specifications (colors, fonts, etc.)
+          required: true
+        - label: I have described clear acceptance criteria for the visual changes
+          required: true
+        - label: I understand this will be implemented by an AI coding assistant
+          required: true

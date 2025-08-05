@@ -1,0 +1,168 @@
+name: 📊 Content/Data Update
+description: Request updates to activities, schedules, or other data in the system
+title: "[DATA] "
+labels: ["data", "content", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request changes to activities, schedules, participant limits, or other data in the school activities system. Please provide specific details about what data needs to be updated.
+
+  - type: input
+    id: data_title
+    attributes:
+      label: Data Update Title
+      description: A clear title for the data change you need
+      placeholder: "e.g., Add new Robotics Club activity, Update Chess Club schedule, Change Basketball team size limit"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_type
+    attributes:
+      label: Type of Data Update
+      description: What kind of data needs to be changed?
+      options:
+        - Add new activity
+        - Update existing activity details
+        - Change activity schedule/times
+        - Update participant limits
+        - Modify activity categories
+        - Add/remove student participants
+        - Update teacher information
+        - Other data change
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific_changes
+    attributes:
+      label: Specific Changes Needed
+      description: Describe exactly what data needs to be added, updated, or removed
+      placeholder: |
+        Be specific about:
+        - Activity names
+        - Schedule details (days, times)
+        - Participant limits
+        - Descriptions
+        - Categories
+        - Any other relevant details
+    validations:
+      required: true
+
+  - type: textarea
+    id: new_activity_details
+    attributes:
+      label: New Activity Details (if adding new activity)
+      description: If adding a new activity, provide all required information
+      placeholder: |
+        Activity Name: 
+        Description: 
+        Schedule: (e.g., "Mondays and Wednesdays, 3:15 PM - 4:45 PM")
+        Days: (e.g., Monday, Wednesday)
+        Start Time: (24-hour format, e.g., 15:15)
+        End Time: (24-hour format, e.g., 16:45)
+        Category: (sports, arts, academic, community, technology)
+        Max Participants: 
+        Initial Participants: (leave blank if none)
+
+  - type: textarea
+    id: existing_activity_changes
+    attributes:
+      label: Existing Activity Changes (if updating existing activity)
+      description: If updating an existing activity, specify what should change
+      placeholder: |
+        Activity Name: (name of existing activity to update)
+        
+        Fields to Update:
+        - Description: 
+        - Schedule: 
+        - Max Participants: 
+        - Category: 
+        - Other changes: 
+
+  - type: textarea
+    id: schedule_details
+    attributes:
+      label: Schedule Information
+      description: For any schedule changes, provide detailed timing information
+      placeholder: |
+        Current Schedule: 
+        New Schedule: 
+        
+        Days of week: 
+        Start time (24-hour): 
+        End time (24-hour): 
+        
+        Any schedule conflicts to consider: 
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How soon do you need this data update?
+      options:
+        - Low - Can be done anytime
+        - Medium - Needed within a few weeks
+        - High - Needed within a few days
+        - Critical - Needed immediately for school operations
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we verify the data update is correct?
+      placeholder: |
+        Specific criteria such as:
+        - New activity appears in the activities list
+        - Schedule shows correct days and times
+        - Students can register for the activity
+        - Participant limit is enforced correctly
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation_requirements
+    attributes:
+      label: Validation Requirements
+      description: Any special requirements for validating or testing the data changes
+      placeholder: "e.g., Test with specific student accounts, verify no scheduling conflicts, check mobile display"
+
+  - type: checkboxes
+    id: data_considerations
+    attributes:
+      label: Data Considerations
+      description: Select all that apply
+      options:
+        - label: This affects existing student registrations
+        - label: This may create scheduling conflicts
+        - label: This requires teacher account updates
+        - label: This affects the database structure
+        - label: This needs to be announced to students/parents
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other important information about this data update
+      placeholder: "Context about why this change is needed, related activities, timing constraints, etc."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm you have provided complete information
+      options:
+        - label: I have provided specific details about what data needs to change
+          required: true
+        - label: I have included all necessary information (names, schedules, limits, etc.)
+          required: true
+        - label: I have specified how to verify the changes are correct
+          required: true
