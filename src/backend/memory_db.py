@@ -39,6 +39,11 @@ class InMemoryCollection:
                         if item[key] > value["$lte"]:
                             match = False
                             break
+                    elif "$exists" in value:
+                        field_exists = key in item
+                        if value["$exists"] != field_exists:
+                            match = False
+                            break
                 else:
                     if item[key] != value:
                         match = False
@@ -58,10 +63,6 @@ class InMemoryCollection:
         for item_id, item in self.data.items():
             match = True
             for key, value in query.items():
-                if key not in item:
-                    match = False
-                    break
-                
                 # Handle MongoDB-style operators
                 if isinstance(value, dict):
                     if "$in" in value:
@@ -133,8 +134,14 @@ class InMemoryCollection:
                             if item[key] > value["$lte"]:
                                 match = False
                                 break
+                    elif "$exists" in value:
+                        field_exists = key in item
+                        if value["$exists"] != field_exists:
+                            match = False
+                            break
                 else:
-                    if item[key] != value:
+                    # For simple field matching, check if field exists and matches
+                    if key not in item or item[key] != value:
                         match = False
                         break
             
@@ -226,7 +233,8 @@ initial_activities = {
             "end_time": "16:45"
         },
         "max_participants": 12,
-        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
+        "participants": ["michael@mergington.edu", "daniel@mergington.edu"],
+        "difficulty": "Beginner"
     },
     "Programming Class": {
         "description": "Learn programming fundamentals and build software projects",
@@ -237,7 +245,8 @@ initial_activities = {
             "end_time": "08:00"
         },
         "max_participants": 20,
-        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
+        "participants": ["emma@mergington.edu", "sophia@mergington.edu"],
+        "difficulty": "Intermediate"
     },
     "Morning Fitness": {
         "description": "Early morning physical training and exercises",
@@ -303,7 +312,8 @@ initial_activities = {
             "end_time": "08:00"
         },
         "max_participants": 10,
-        "participants": ["james@mergington.edu", "benjamin@mergington.edu"]
+        "participants": ["james@mergington.edu", "benjamin@mergington.edu"],
+        "difficulty": "Advanced"
     },
     "Debate Team": {
         "description": "Develop public speaking and argumentation skills",
@@ -325,7 +335,8 @@ initial_activities = {
             "end_time": "14:00"
         },
         "max_participants": 15,
-        "participants": ["ethan@mergington.edu", "oliver@mergington.edu"]
+        "participants": ["ethan@mergington.edu", "oliver@mergington.edu"],
+        "difficulty": "Advanced"
     },
     "Science Olympiad": {
         "description": "Weekend science competition preparation for regional and state events",
@@ -347,7 +358,8 @@ initial_activities = {
             "end_time": "17:00"
         },
         "max_participants": 16,
-        "participants": ["william@mergington.edu", "jacob@mergington.edu"]
+        "participants": ["william@mergington.edu", "jacob@mergington.edu"],
+        "difficulty": "Advanced"
     }
 }
 
