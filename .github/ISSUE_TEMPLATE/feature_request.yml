@@ -1,0 +1,123 @@
+name: 🚀 Feature Request
+description: Request a new feature or enhancement for the school activities system
+title: "[FEATURE] "
+labels: ["enhancement", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please provide as much detail as possible to help our Copilot coding assistant implement your request effectively.
+
+  - type: input
+    id: feature_title
+    attributes:
+      label: Feature Title
+      description: A clear, concise title for the feature
+      placeholder: "e.g., Calendar view for activities, Dark mode toggle, Advanced search filters"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_description
+    attributes:
+      label: Problem Description
+      description: Describe the problem or need this feature would solve
+      placeholder: "What specific challenge are teachers or students facing that this feature would address?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your idea for how this feature should work
+      placeholder: "Explain how users would interact with this feature and what it should accomplish"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature_area
+    attributes:
+      label: Area of Application
+      description: Which part of the application does this feature relate to?
+      options:
+        - Frontend/User Interface
+        - Backend/API
+        - Database/Data Management
+        - Authentication/Security
+        - Mobile/Responsive Design
+        - Reporting/Analytics
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user_type
+    attributes:
+      label: Primary User Type
+      description: Who would primarily use this feature?
+      options:
+        - Students
+        - Teachers
+        - Administrators
+        - All Users
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List specific requirements that must be met for this feature to be considered complete
+      placeholder: |
+        Please list specific, testable criteria such as:
+        - Users can click a toggle button to switch between light and dark mode
+        - The selected mode is remembered when users return to the site
+        - All text remains readable in both modes
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve user experience
+        - High - Addresses significant user need
+        - Critical - Essential for school operations
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_hints
+    attributes:
+      label: Technical Hints (Optional)
+      description: Any technical suggestions, similar features you've seen, or implementation ideas
+      placeholder: "e.g., Similar to Google Calendar's week view, Could use CSS media queries for responsive design, May need to modify the activities API endpoint"
+
+  - type: textarea
+    id: limitations_context
+    attributes:
+      label: Limitations and Context
+      description: Any constraints, existing integrations, or important context to consider
+      placeholder: "e.g., Must work with existing MongoDB database, Should maintain current performance, Need to consider mobile users"
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm you have provided sufficient detail
+      options:
+        - label: I have provided clear acceptance criteria that can be tested
+          required: true
+        - label: I have described the problem this feature solves
+          required: true
+        - label: I understand this will be implemented by an AI coding assistant
+          required: true

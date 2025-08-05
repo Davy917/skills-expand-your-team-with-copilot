@@ -1,0 +1,159 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with the school activities system
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please provide detailed information to help our Copilot coding assistant fix the issue quickly.
+
+  - type: input
+    id: bug_title
+    attributes:
+      label: Bug Title
+      description: A clear, concise title describing the bug
+      placeholder: "e.g., Students cannot register for activities, Login button not working, Activities not loading on mobile"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Bug Description
+      description: Describe what is happening (the actual behavior)
+      placeholder: "Provide a clear description of what the bug is"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe what should happen instead
+      placeholder: "Describe what you expected to happen"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide step-by-step instructions to reproduce the bug
+      placeholder: |
+        1. Go to the activities page
+        2. Click on 'Chess Club'
+        3. Click 'Register'
+        4. Enter email address
+        5. Click submit
+        6. See error message
+      value: |
+        1. 
+        2. 
+        3. 
+        4. 
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected Area
+      description: Which part of the application has the bug?
+      options:
+        - Student Registration
+        - Activity Viewing/Browsing
+        - Teacher Login/Authentication
+        - Activity Filtering/Search
+        - User Interface/Layout
+        - Mobile/Responsive Design
+        - Database/Data Loading
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Low - Minor cosmetic issue
+        - Medium - Affects some functionality but workarounds exist
+        - High - Major functionality is broken
+        - Critical - System is unusable or data loss occurs
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How Often Does This Occur?
+      description: How frequently does this bug happen?
+      options:
+        - Always - Every time
+        - Often - Most of the time
+        - Sometimes - Intermittently
+        - Rarely - Only occasionally
+        - Once - Happened only once
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: browsers_devices
+    attributes:
+      label: Browsers/Devices Affected
+      description: Which browsers or devices show this issue?
+      options:
+        - label: Chrome
+        - label: Firefox
+        - label: Safari
+        - label: Edge
+        - label: Mobile phones
+        - label: Tablets
+        - label: Desktop computers
+
+  - type: textarea
+    id: error_messages
+    attributes:
+      label: Error Messages or Console Output
+      description: Include any error messages, console logs, or technical details
+      placeholder: "Paste any error messages you see here"
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be relevant
+      placeholder: "Screenshots, specific user accounts affected, time when issue started, etc."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria for Fix
+      description: How will we know this bug is fixed?
+      placeholder: |
+        Specific criteria that must be met:
+        - Students can successfully register for activities
+        - No error messages appear during normal registration
+        - All browsers show the same behavior
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm you have provided sufficient information
+      options:
+        - label: I have provided clear steps to reproduce the issue
+          required: true
+        - label: I have described what should happen instead
+          required: true
+        - label: I have specified how to verify the fix works
+          required: true

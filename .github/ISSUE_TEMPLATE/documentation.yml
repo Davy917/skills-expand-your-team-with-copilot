@@ -1,0 +1,161 @@
+name: 📚 Documentation Request
+description: Request updates, additions, or fixes to documentation
+title: "[DOCS] "
+labels: ["documentation", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request documentation changes, additions, or improvements. Help our Copilot coding assistant create clear, helpful documentation.
+
+  - type: input
+    id: docs_title
+    attributes:
+      label: Documentation Request Title
+      description: A clear title for the documentation change
+      placeholder: "e.g., Add teacher setup guide, Update API documentation, Create student registration instructions"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Type of Documentation
+      description: What kind of documentation is needed?
+      options:
+        - User Guide/Instructions
+        - Teacher Guide
+        - Administrator Guide
+        - Technical/Developer Documentation
+        - API Documentation
+        - Installation/Setup Guide
+        - Troubleshooting Guide
+        - FAQ/Common Questions
+        - Update existing documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_action
+    attributes:
+      label: What needs to be done?
+      description: What action is needed for this documentation?
+      options:
+        - Create new documentation
+        - Update existing documentation
+        - Fix errors in existing documentation
+        - Reorganize/restructure documentation
+        - Add missing information
+        - Remove outdated information
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_audience
+    attributes:
+      label: Target Audience
+      description: Who will use this documentation?
+      placeholder: "e.g., New teachers setting up accounts, Students learning to register for activities, System administrators"
+    validations:
+      required: true
+
+  - type: textarea
+    id: documentation_content
+    attributes:
+      label: Documentation Content Needed
+      description: Describe what information should be included
+      placeholder: |
+        Outline the topics, procedures, or information that should be covered:
+        - Step-by-step instructions for...
+        - Explanation of how to...
+        - Common problems and solutions for...
+        - Screenshots or examples of...
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_documentation
+    attributes:
+      label: Current Documentation Issues (if updating existing docs)
+      description: If updating existing documentation, what are the current problems?
+      placeholder: "e.g., Information is outdated, missing steps, broken links, unclear instructions"
+
+  - type: input
+    id: documentation_location
+    attributes:
+      label: Where should this documentation live?
+      description: Specify the file location or suggest where it should be placed
+      placeholder: "e.g., README.md, docs/teacher-guide.md, docs/api/, create new file in docs/"
+
+  - type: checkboxes
+    id: documentation_requirements
+    attributes:
+      label: Documentation Requirements
+      description: Select what should be included in the documentation
+      options:
+        - label: Step-by-step instructions
+        - label: Screenshots or images
+        - label: Code examples (if technical)
+        - label: Common troubleshooting scenarios
+        - label: Links to related resources
+        - label: Contact information for support
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know the documentation is complete and helpful?
+      placeholder: |
+        Specific criteria such as:
+        - Documentation covers all necessary steps
+        - Instructions are clear and easy to follow
+        - Examples are provided for complex procedures
+        - Document is properly formatted and organized
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this documentation?
+      options:
+        - Low - Nice to have for future reference
+        - Medium - Would help users be more effective
+        - High - Needed to help users with current problems
+        - Critical - Blocking users from completing important tasks
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples_references
+    attributes:
+      label: Examples or References
+      description: Provide examples of similar documentation or reference materials
+      placeholder: "Links to good examples, existing documentation to model after, or specific formatting preferences"
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information about this documentation request
+      placeholder: "Background on why this is needed, related systems, timing requirements, etc."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm you have provided sufficient information
+      options:
+        - label: I have clearly described what documentation is needed
+          required: true
+        - label: I have specified the target audience for this documentation
+          required: true
+        - label: I have provided acceptance criteria to verify completeness
+          required: true

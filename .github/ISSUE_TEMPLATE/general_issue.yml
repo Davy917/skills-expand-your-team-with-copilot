@@ -1,0 +1,73 @@
+name: 🗣️ General Issue
+description: For issues that don't fit other categories or general questions
+title: "[GENERAL] "
+labels: ["question", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for general issues, questions, or requests that don't fit into the other specific categories.
+
+  - type: input
+    id: issue_title
+    attributes:
+      label: Issue Title
+      description: A clear, descriptive title for your issue
+      placeholder: "Brief description of your question or request"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Detailed Description
+      description: Provide a detailed description of your issue, question, or request
+      placeholder: "Explain your issue in detail, including any relevant context"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_category
+    attributes:
+      label: Category
+      description: Which category best describes your issue?
+      options:
+        - General Question
+        - System Configuration
+        - User Account Issue
+        - Performance/Speed Issue
+        - Integration/Third-party Service
+        - Security Concern
+        - Training/Education Request
+        - Process/Policy Question
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_outcome
+    attributes:
+      label: Expected Outcome
+      description: What do you hope to achieve or what resolution are you looking for?
+      placeholder: "Describe what you expect to happen or what kind of help you need"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: "Screenshots, error messages, relevant background information, etc."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm the following
+      options:
+        - label: I have checked if this fits better in one of the specific issue templates (Feature Request, Bug Report, UI Enhancement, etc.)
+          required: true
+        - label: I have provided enough detail for someone to understand and help with my issue
+          required: true
